@@ -1,13 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+button {
+  margin: 4px;
+}
 
-@layer components {
-  [ejs-button] {
-    @apply bg-blue;
+[ejs-button] {
+  @apply font-opensans font-semibold;
+  @apply min-w-[64px] h-9;
+  &.fill {
+    @apply bg-primary-normal 
+    hover:bg-primary-hover 
+    focus:bg-primary-focus
+    text-white
+    
+    shadow
+    rounded;
+  }
 
-    &:hover {
-      @apply bg-sky-500;
-    }
+  &.outline {
+    @apply bg-white 
+    text-primary-normal 
+    shadow-none border 
+    border-gray-500 
+    border-solid 
+    outline-none
+    rounded;
+  }
+
+  &.link {
   }
 }
