@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  [ejs-button] {
+    @apply bg-blue;
+
+    &:hover {
+      @apply bg-sky-500;
+    }
+  }
+}
