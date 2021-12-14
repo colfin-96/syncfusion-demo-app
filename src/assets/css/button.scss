@@ -1,0 +1,32 @@
+[ejs-button] {
+  @apply font-opensans font-semibold;
+  @apply min-w-[64px] h-9;
+  &.fill {
+    @apply bg-primary-n
+    hover:bg-primary-h
+    focus:bg-primary-f
+    dark:bg-primary-h
+    text-white-n
+    shadow
+    rounded;
+  }
+
+  &.outline {
+    @apply bg-white-n hover:bg-primary-hi
+      text-primary-n
+      border border-gray-500 border-solid outline-none
+      shadow-none
+      rounded;
+  }
+
+  &.link {
+    @apply bg-transparent hover:bg-primary-hi
+      text-primary-n
+      shadow-none;
+  }
+
+  &.float {
+    @apply bg-primary-n hover:bg-primary-h
+      min-w-0 h-14 w-14;
+  }
+}

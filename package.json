@@ -7,8 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "tailwind": "npx tailwindcss -i ./src/styles.scss -o ./dist/output.css --watch",
-    "build:prod": "cross-env NODE_ENV=production ng build --configuration production"
+    "build-css": "yarn tailwind-all && yarn sass ./dist/output.scss:./dist/output.css ./dist/button.scss:./dist/button.css",
+    "tailwind-all": "concurrently \"yarn run tailwind\" \"yarn run tailwind-button\"",
+    "tailwind": "yarn tailwindcss -i ./src/styles.scss -o ./dist/output.scss",
+    "tailwind-button": "npx tailwindcss -i ./src/assets/css/button.scss -o ./dist/button.scss"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +24,8 @@
     "@angular/router": "~13.0.0",
     "@syncfusion/ej2-angular-buttons": "^19.3.53",
     "@syncfusion/ej2-angular-splitbuttons": "^19.3.53",
-    "postcss": "^8.4.4",
+    "concurrently": "^6.4.0",
+    "postcss": "^8.4.5",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -35,6 +38,7 @@
     "@types/node": "^12.11.1",
     "autoprefixer": "^10.4.0",
     "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -43,7 +47,10 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "ngx-tailwind": "2.3.0",
     "postcss": "^8.4.4",
+    "postcss-cli": "^9.1.0",
     "tailwindcss": "^3.0.1",
-    "typescript": "~4.4.3"
+    "typescript": "~4.4.3",
+    "webpack": "^5.65.0",
+    "webpack-dev-server": "^4.6.0"
   }
 }
